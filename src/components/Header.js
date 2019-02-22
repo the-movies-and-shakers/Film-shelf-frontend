@@ -13,7 +13,7 @@ render() {
 
 const styles = {
     header: {
-        color: "mediumslateblue",
+        color: "slateblue",
         fontWeight: "bold",
         textAlign: "Center",
         fontSize: "50px",

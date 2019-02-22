@@ -16,7 +16,8 @@ const styles = {
         color: "mediumslateblue",
         fontWeight: "bold",
         textAlign: "Center",
-        fontSize: "50px"
+        fontSize: "50px",
+        paddingTop: "50px"
     }
 }
 

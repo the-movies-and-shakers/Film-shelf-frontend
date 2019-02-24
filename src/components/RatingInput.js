@@ -21,16 +21,36 @@ class RatingInput extends React.Component {
     
     return (                
       <div>
-        <h2>You've given this film a rating of {rating}</h2>
+        <h2 style={styles.rating}>You've given this film a rating of {rating}</h2>
+        <div style={styles.stars}>
         <StarRatingComponent 
           name="rate1" 
           starCount={5}
           value={rating}
           onStarClick={this.onStarClick.bind(this)}
         />
+        </div>
       </div>
     );
   }
 }
+
+const styles = {
+    rating: {
+        color: "goldenrod",
+        textAlign: "Center",
+        fontSize: "30px",
+        paddingTop: "30px",
+        fontFamily: "Shrikhand"
+    },
+    stars: {
+        color: "goldenrod",
+        fontWeight: "bold",
+        textAlign: "Center",
+        fontSize: "40px",
+        paddingTop: "15px"
+    }
+}
+
 
 export default RatingInput;

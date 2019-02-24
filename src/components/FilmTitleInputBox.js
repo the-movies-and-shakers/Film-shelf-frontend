@@ -6,7 +6,7 @@ class FilmTitleInputBox extends React.Component {
         return (
             <div className="row" style={styles.filmEntry}>
                 <div className="col" style={styles.inputBox}>
-                    <input class="form-control" type="text" placeholder="Add new film"/>
+                    <input class="form-control" type="text" placeholder="Add new film" style={styles.holder}/>
                 </div>
             </div>
         );
@@ -19,13 +19,20 @@ const styles = {
         textAlign: "center",
         float: "left",
         align: "center"
-    },
+        },
 
     filmEntry: {
         textAlign: "center",
         marginTop: "40px",
         paddingLeft: "250px",
         paddingRight: "250px"
+    },
+
+    holder: {
+        color: "goldenrod",
+        backgroundColor: "#011627",
+        borderColor: "goldenrod",
+        fontFamily: "Shrikhand"
     }
 
 }

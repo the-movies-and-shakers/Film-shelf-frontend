@@ -38,10 +38,10 @@ class RatingInput extends React.Component {
 const styles = {
     rating: {
         color: "goldenrod",
-        fontWeight: "bold",
         textAlign: "Center",
         fontSize: "30px",
-        paddingTop: "30px"
+        paddingTop: "30px",
+        fontFamily: "Shrikhand"
     },
     stars: {
         color: "goldenrod",

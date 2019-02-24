@@ -11,13 +11,14 @@ render() {
     }
 }
 
+
 const styles = {
     header: {
-        color: "slateblue",
-        fontWeight: "bold",
+        color: "goldenrod",
         textAlign: "Center",
-        fontSize: "50px",
-        paddingTop: "50px"
+        fontSize: "60px",
+        paddingTop: "50px",
+        fontFamily: "Shrikhand"
     }
 }
 

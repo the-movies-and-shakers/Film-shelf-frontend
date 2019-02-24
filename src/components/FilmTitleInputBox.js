@@ -23,9 +23,9 @@ const styles = {
 
     filmEntry: {
         textAlign: "center",
-        marginTop: "50px",
-        paddingLeft: "100px",
-        paddingRight: "100px"
+        marginTop: "40px",
+        paddingLeft: "250px",
+        paddingRight: "250px"
     }
 
 }

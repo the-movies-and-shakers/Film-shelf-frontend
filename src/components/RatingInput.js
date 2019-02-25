@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 class RatingInput extends React.Component {
@@ -8,12 +7,25 @@ class RatingInput extends React.Component {
     super();
 
     this.state = {
-      rating: 1
+      rating: 0
     };
   }
 
   onStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
+    //if rating = star you're trying to click, rating -- 1 
+    //else rating:nextValue
+
+    let newRating = this.state.rating;
+
+    console.log(newRating);
+
+    if (nextValue === newRating) {
+      newRating -= 1;
+      this.setState({rating: newRating});
+    }
+    else {
+      this.setState({rating: nextValue});
+    }
   }
 
   render() {
@@ -24,7 +36,7 @@ class RatingInput extends React.Component {
         <h2 style={styles.rating}>You've given this film a rating of {rating}</h2>
         <div style={styles.stars}>
         <StarRatingComponent 
-          name="rate1" 
+          name="rate1" elf-f
           starCount={5}
           value={rating}
           onStarClick={this.onStarClick.bind(this)}

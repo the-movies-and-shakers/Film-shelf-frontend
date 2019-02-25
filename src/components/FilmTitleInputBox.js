@@ -6,7 +6,7 @@ class FilmTitleInputBox extends React.Component {
         return (
             <div className="row" style={styles.filmEntry}>
                 <div className="col" style={styles.inputBox}>
-                    <input class="form-control" type="text" placeholder="Add new film" style={styles.holder}/>
+                    <input className="form-control" type="text" placeholder="Add new film" style={styles.holder}/>
                 </div>
             </div>
         );

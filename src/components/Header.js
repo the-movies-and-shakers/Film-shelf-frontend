@@ -23,11 +23,11 @@ const styles = {
     },
 
     blurb: {
-    color: "goldenrod",
-    textAlign: "Center",
-    fontSize: "30px",
-    paddingTop: "20px",
-    fontFamily: "Shrikhand"
+        color: "goldenrod",
+        textAlign: "Center",
+        fontSize: "30px",
+        paddingTop: "0px",
+        fontFamily: "Shrikhand"
     }
 }
 

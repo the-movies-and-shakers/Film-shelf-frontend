@@ -12,8 +12,6 @@ class RatingInput extends React.Component {
   }
 
   onStarClick(nextValue, prevValue, name) {
-    //if rating = star you're trying to click, rating -- 1 
-    //else rating:nextValue
 
     let newRating = this.state.rating;
 
@@ -28,6 +26,10 @@ class RatingInput extends React.Component {
     }
   }
 
+  onStarHover(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
+  }
+
   render() {
     const { rating } = this.state;
     
@@ -40,6 +42,7 @@ class RatingInput extends React.Component {
           starCount={5}
           value={rating}
           onStarClick={this.onStarClick.bind(this)}
+          onStarHover={this.onStarHover.bind(this)}
         />
         </div>
       </div>

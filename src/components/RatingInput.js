@@ -7,16 +7,19 @@ class RatingInput extends React.Component {
     super();
 
     this.state = {
-      rating: 0
+      rating: 0,
+      clicked: false
     };
   }
 
   onStarClick(nextValue, prevValue, name) {
-
+    //this sets the rating when clicked
     let newRating = this.state.rating;
 
-    console.log(newRating);
+    this.setState({clicked: true});
 
+    //this allows you to return to 0 rating when clicked a second time
+    //currently if you hover over and then click, it goes down 1 star - attempting to fix
     if (nextValue === newRating) {
       newRating -= 1;
       this.setState({rating: newRating});
@@ -27,8 +30,14 @@ class RatingInput extends React.Component {
   }
 
   onStarHover(nextValue, prevValue, name) {
+    //this sets the rating on hovering over
     this.setState({rating: nextValue});
   }
+
+  /*I tried using the onStarHoverOut function but this just created more issues!!
+  Ideally once clicked, onStarHover would either stop working or when HoverOut it would revert
+  to previous setState
+  Any ideas on this? */
 
   render() {
     const { rating } = this.state;

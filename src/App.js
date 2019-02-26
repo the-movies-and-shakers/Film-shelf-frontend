@@ -4,6 +4,7 @@ import Header from './components/Header';
 import FilmTitleInputBox from './components/FilmTitleInputBox';
 import RatingInput from './components/RatingInput';
 import GenreDropDown from './components/GenreDropDown';
+import AddButton from './components/AddButton';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <FilmTitleInputBox />
         <RatingInput />
         <GenreDropDown />
+        <AddButton />
       </div>
     );
   }

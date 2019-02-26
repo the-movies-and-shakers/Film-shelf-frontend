@@ -2,11 +2,38 @@ import React from 'react';
 
 class FilmTitleInputBox extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            filmTitle: ""
+        }
+
+        this.onFilmEntered = this.onFilmEntered.bind(this);
+    }
+
+    onFilmEntered(event) {
+
+        const enteredTitle = event.target.value;
+
+        this.setState({
+            filmTitle: enteredTitle
+        });
+
+    }
+
     render() {
         return (
             <div className="row" style={styles.filmEntry}>
                 <div className="col" style={styles.inputBox}>
-                    <input className="form-control" type="text" placeholder="Add new film" style={styles.holder}/>
+                    <input 
+                        className="form-control" 
+                        type="text" 
+                        placeholder="Add new film" 
+                        style={styles.holder}
+                        onChange={this.onFilmEntered}
+                        filmTitle={this.state.filmTitle}
+                    />
                 </div>
             </div>
         );

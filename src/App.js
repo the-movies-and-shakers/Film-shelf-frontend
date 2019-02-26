@@ -7,6 +7,18 @@ import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.addEntry = this.addEntry.bind(this);
+  }
+
+  addEntry(film) {
+    //Trying to just get this to alert what has been put in the input box when add is clicked
+    alert(film);
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,7 +26,8 @@ class App extends Component {
         <FilmTitleInputBox />
         <RatingInput />
         <GenreDropDown />
-        <AddButton />
+        <AddButton 
+          onAddClickedHandler={this.addEntry}/>
       </div>
     );
   }

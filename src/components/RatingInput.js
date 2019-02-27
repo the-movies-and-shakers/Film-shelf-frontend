@@ -27,6 +27,8 @@ class RatingInput extends React.Component {
     else {
       this.setState({rating: nextValue});
     }
+
+    this.props.onRatingHandler(this.state.rating);
   }
 
   onStarHover(nextValue, prevValue, name) {

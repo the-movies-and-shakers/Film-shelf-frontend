@@ -11,20 +11,51 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      filmTitle: "",
+      rating: 0
+    }
+
+    this.filmTitleEntered = this.filmTitleEntered.bind(this);
+    this.ratingGiven = this.ratingGiven.bind(this);
     this.addEntry = this.addEntry.bind(this);
   }
 
-  addEntry(film) {
-    //Trying to just get this to alert what has been put in the input box when add is clicked
-    alert(film);
+  filmTitleEntered(film) {
+
+    this.setState({
+      filmTitle: film
+    });
+  }
+
+  ratingGiven(newRating) {
+
+    this.setState({
+      rating: newRating
+    });
+  }
+
+  addEntry() {
+    
+    let filmToBeAdded = {
+      filmTitle: this.state.filmTitle,
+      rating: this.state.rating
+    }
+
+    console.log(filmToBeAdded);
+    
   }
 
   render() {
     return (
       <div className="App">
         <Header /> 
-        <FilmTitleInputBox />
-        <RatingInput />
+        <FilmTitleInputBox
+          onFilmHandler={this.filmTitleEntered}
+        />
+        <RatingInput
+          onRatingHandler={this.ratingGiven}
+        />
         <GenreDropDown />
         <AddButton 
           onAddClickedHandler={this.addEntry}/>

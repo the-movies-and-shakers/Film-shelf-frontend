@@ -2,10 +2,20 @@ import React from 'react';
 
 class GenreDropDown extends React.Component {
 
+        constructor(props) {
+            super(props);
+    
+            this.onGenreChoice = this.onGenreChoice.bind(this);
+        }
+    
+        onGenreChoice(event) {
+            this.props.onGenreChoiceHandler(event.target.value);
+        }
+
 render() {
     return (
         <div className="genre-select" style={styles.menu}>
-            <select name="Genre" style={styles.genre}>
+            <select name="Genre" style={styles.genre} onChange={this.onGenreChoice}>
             <option value="" disabled selected>Select your genre</option>
             <option value="Horror">Horror</option>
             <option value="Comedy">Comedy</option>

@@ -19,6 +19,8 @@ class App extends Component {
     this.filmTitleEntered = this.filmTitleEntered.bind(this);
     this.ratingGiven = this.ratingGiven.bind(this);
     this.addEntry = this.addEntry.bind(this);
+    this.onGenreChoice = this.onGenreChoice.bind(this);
+
   }
 
   filmTitleEntered(film) {
@@ -46,6 +48,13 @@ class App extends Component {
     
   }
 
+  onGenreChoice(genre) {
+    this.setState({
+      genreChoice: genre
+      
+    });
+}
+
   render() {
     return (
       <div className="App">
@@ -56,7 +65,8 @@ class App extends Component {
         <RatingInput
           onRatingHandler={this.ratingGiven}
         />
-        <GenreDropDown />
+        <GenreDropDown 
+          onGenreChoiceHandler={this.genreChoice} />
         <AddButton 
           onAddClickedHandler={this.addEntry}/>
       </div>

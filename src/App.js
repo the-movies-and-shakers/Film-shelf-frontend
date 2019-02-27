@@ -13,7 +13,8 @@ class App extends Component {
 
     this.state = {
       filmTitle: "",
-      rating: 0
+      rating: 0,
+      genreChoice: ""
     }
 
     this.filmTitleEntered = this.filmTitleEntered.bind(this);

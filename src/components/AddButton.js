@@ -1,5 +1,4 @@
 import React from 'react';
-import FilmTitleInputBox from './FilmTitleInputBox';
 
 class AddButton extends React.Component {
 
@@ -11,11 +10,7 @@ class AddButton extends React.Component {
 
     onAddClicked() {
 
-        /* I'm trying to get the FilmTitleInputBox to pass in the filmTitle state so 
-            we can 'add' it to the database but I haven't yet worked out how! */
-        let film = FilmTitleInputBox.props.filmTitle;
-
-        this.props.onAddClickedHandler(film)
+        this.props.onAddClickedHandler()
     }
 
     render() {
@@ -27,7 +22,6 @@ class AddButton extends React.Component {
                     type="button"
                     style={styles.addButton}
                     onClick={this.onAddClicked}
-
                 >
                     Add
                 </button>

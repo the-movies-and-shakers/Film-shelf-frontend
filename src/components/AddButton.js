@@ -38,7 +38,8 @@ const styles = {
         margin: "30px",
         borderRadius: "50%",
         backgroundColor: "goldenrod",
-        color: "#011627"
+        color: "#011627",
+        fontFamily: "Shrikhand"
     }
 };
 

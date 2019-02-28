@@ -5,6 +5,25 @@ import FilmTitleInputBox from './components/FilmTitleInputBox';
 import RatingInput from './components/RatingInput';
 import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
+import FilmListTable from './components/FilmListTable';
+
+let data = [
+  {
+    filmTitle: "Finding Susan",
+      rating: 5,
+      genre: "Horror"
+  },
+  {
+    filmTitle: "Wall-e",
+      rating: 4,
+      genre: "Comedy"
+  },
+  {
+    filmTitle: "Harry Potter",
+      rating: 5,
+      genre: "Thriller"
+  }
+];
 
 class App extends Component {
 
@@ -71,6 +90,7 @@ class App extends Component {
           onGenreChoiceHandler={this.onGenreChoice} />
         <AddButton 
           onAddClickedHandler={this.addEntry}/>
+        <FilmListTable data={data}/>
       </div>
     );
   }

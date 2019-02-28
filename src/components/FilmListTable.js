@@ -6,7 +6,7 @@ class FilmListTable extends React.Component {
     render() {
         return (
           <div>
-            <BootstrapTable data={this.props.filmList}>
+            <BootstrapTable data={this.props.data}>
               <TableHeaderColumn isKey dataField='filmTitle'>
                 Title
               </TableHeaderColumn>
@@ -20,9 +20,7 @@ class FilmListTable extends React.Component {
           </div>
         );
       }
+    }
 
-const styles = {
-    
-};
 
 export default FilmListTable;

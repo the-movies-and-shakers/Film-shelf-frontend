@@ -7,23 +7,7 @@ import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
 import FilmListTable from './components/FilmListTable';
 
-let data = [
-  {
-    filmTitle: "Finding Susan",
-      rating: 5,
-      genre: "Horror"
-  },
-  {
-    filmTitle: "Wall-e",
-      rating: 4,
-      genre: "Comedy"
-  },
-  {
-    filmTitle: "Harry Potter",
-      rating: 5,
-      genre: "Thriller"
-  }
-];
+let data = [];
 
 class App extends Component {
 
@@ -62,11 +46,10 @@ class App extends Component {
     let filmToBeAdded = {
       filmTitle: this.state.filmTitle,
       rating: this.state.rating,
-      genre: this.state.genreChoice
-    }
-
-    console.log(filmToBeAdded);
-    
+      genre: this.state.genre
+    }    
+    data.push(filmToBeAdded);
+    this.setState({data:data})
   }
 
   onGenreChoice(genre) {

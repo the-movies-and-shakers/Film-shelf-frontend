@@ -1,19 +1,20 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import '../App.css';
 
 class FilmListTable extends React.Component {
 
     render() {
         return (
           <div style={styles.table}>
-            <BootstrapTable data={this.props.data} style={styles.row}>
-              <TableHeaderColumn isKey dataField='filmTitle'>
+            <BootstrapTable data={this.props.data} trClassName='tr-style'>
+              <TableHeaderColumn isKey dataField='filmTitle' className='tr-head'>
                 Title
               </TableHeaderColumn>
-              <TableHeaderColumn dataField='rating'>
+              <TableHeaderColumn dataField='rating' className='tr-head'>
                 Rating
               </TableHeaderColumn>
-              <TableHeaderColumn dataField='genre'>
+              <TableHeaderColumn dataField='genre' className='tr-head'>
                 Genre
               </TableHeaderColumn>
             </BootstrapTable>

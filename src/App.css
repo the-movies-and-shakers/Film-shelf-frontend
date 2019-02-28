@@ -2,7 +2,15 @@
 
 body {
   background-color: #011627;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
 }
 
+.tr-style {
+  background-color: aliceblue
+}
+
+.tr-head {
+  background-color: aliceblue
+}
 
 

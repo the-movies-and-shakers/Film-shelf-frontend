@@ -33,7 +33,7 @@ class App extends Component {
     this.state = {
       filmTitle: "",
       rating: 0,
-      genreChoice: ""
+      genre: ""
     }
 
     this.filmTitleEntered = this.filmTitleEntered.bind(this);
@@ -71,7 +71,7 @@ class App extends Component {
 
   onGenreChoice(genre) {
     this.setState({
-      genreChoice: genre
+      genre: genre
       
     });
 }

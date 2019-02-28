@@ -42,7 +42,8 @@ class App extends Component {
     
     let filmToBeAdded = {
       filmTitle: this.state.filmTitle,
-      rating: this.state.rating
+      rating: this.state.rating,
+      genre: this.state.genreChoice
     }
 
     console.log(filmToBeAdded);
@@ -67,7 +68,7 @@ class App extends Component {
           onRatingHandler={this.ratingGiven}
         />
         <GenreDropDown 
-          onGenreChoiceHandler={this.genreChoice} />
+          onGenreChoiceHandler={this.onGenreChoice} />
         <AddButton 
           onAddClickedHandler={this.addEntry}/>
       </div>

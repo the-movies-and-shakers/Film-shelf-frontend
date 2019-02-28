@@ -1,23 +1,25 @@
 import React from 'react';
-
-import filmTitle from './FilmTitleInputBox'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 class FilmListTable extends React.Component {
+
     render() {
         return (
-            <div>
-                {this.props.tasks.map((filmTitle, i) => 
-                        <filmTitle taskDescription={task.Description} 
-                              onFilmDeleteHandler={this.props.onFilmDelete} 
-                              onFilmEditHandler={this.props.onFilmEditHandler} 
-                               />
-                    )
-                }
-            </div>
+          <div>
+            <BootstrapTable data={this.props.filmList}>
+              <TableHeaderColumn isKey dataField='filmTitle'>
+                Title
+              </TableHeaderColumn>
+              <TableHeaderColumn dataField='rating'>
+                Rating
+              </TableHeaderColumn>
+              <TableHeaderColumn dataField='genre'>
+                Genre
+              </TableHeaderColumn>
+            </BootstrapTable>
+          </div>
         );
-    }
-}
-
+      }
 
 const styles = {
     

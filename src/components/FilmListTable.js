@@ -21,9 +21,6 @@ class FilmListTable extends React.Component {
         );
       }
 
-
-}
-
 const styles = {
     
 };

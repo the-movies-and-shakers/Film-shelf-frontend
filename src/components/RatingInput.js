@@ -43,8 +43,8 @@ class RatingInput extends React.Component {
     const { rating } = this.state;
     
     return (                
-      <div>
-        <h2 style={styles.rating}>You've given this film a rating of {rating}</h2>
+      <div className="container">
+        <div className="col-sm text-left offset-3" style={styles.rating}>You've given this film a rating of {rating}</div>
         <div style={styles.stars}>
         <StarRatingComponent 
           name="rate1" elf-f

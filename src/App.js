@@ -55,9 +55,19 @@ class App extends Component {
       rating: this.state.rating,
       genre: this.state.genre
     }    
+
     data.push(filmToBeAdded);
-    this.setState({data:data})
-    }
+
+    this.setState({
+      filmTitle: "",
+      rating: 0,
+      genre: ""
+    });
+
+    this.setState({
+      data:data
+    });
+  }
 
   deleteEntry(lineToDelete) {
     //currently isn't setting the state

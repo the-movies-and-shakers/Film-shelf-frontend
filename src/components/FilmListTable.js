@@ -11,7 +11,8 @@ class FilmListTable extends React.Component {
   }   
    
   onDeleteRow(rowKeys) {
-    alert('You deleted: ' + rowKeys)
+    
+    this.props.onDeleteHandler(rowKeys)
   }
 
     render() {

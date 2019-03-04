@@ -30,10 +30,9 @@ class App extends Component {
 
   async componentDidMount() {
 
-    const data = await functionsService.getFilms();
-    this.setState({data: data});
-
-    console.log(data);
+    const newData = await functionsService.getFilms();
+  
+    Array.prototype.push.apply(data, newData);
   }
 
   filmTitleEntered(film) {
@@ -88,11 +87,11 @@ class App extends Component {
 
     let toDelete = lineToDelete[0];
 
-    let filteredTasks = currentList.filter((film) => film.filmTitle !== toDelete);
+    let filteredFilms = currentList.filter((film) => film.filmTitle !== toDelete);
     //I've done console.log and I can see that the filteredTask is showing what it should
     //it's just it won't set the state and I'm not sure why at the moment!
     this.setState({
-      data: filteredTasks
+      data: filteredFilms
     });
   }
 

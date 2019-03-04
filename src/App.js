@@ -6,6 +6,7 @@ import RatingInput from './components/RatingInput';
 import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
 import FilmListTable from './components/FilmListTable';
+import functionsService from './service/functions';
 
 let data = [];
 
@@ -22,9 +23,17 @@ class App extends Component {
 
     this.filmTitleEntered = this.filmTitleEntered.bind(this);
     this.ratingGiven = this.ratingGiven.bind(this);
-    this.addEntry = this.addEntry.bind(this);
     this.onGenreChoice = this.onGenreChoice.bind(this);
+    this.addEntry = this.addEntry.bind(this);
+    this.deleteEntry = this.deleteEntry.bind(this);
+  }
 
+  async componentDidMount() {
+
+    const data = await functionsService.getFilms();
+    this.setState({data: data});
+
+    console.log(data);
   }
 
   filmTitleEntered(film) {
@@ -41,6 +50,13 @@ class App extends Component {
     });
   }
 
+  onGenreChoice(genre) {
+    this.setState({
+      genre: genre
+      
+    });
+  }
+
   addEntry() {
     
     let filmToBeAdded = {
@@ -48,16 +64,37 @@ class App extends Component {
       rating: this.state.rating,
       genre: this.state.genre
     }    
+
     data.push(filmToBeAdded);
-    this.setState({data:data})
+
+    this.setState({
+      filmTitle: "",
+      rating: 0,
+      genre: ""
+    });
+
+    this.setState({
+      data: data
+    });
+
+    this.forceUpdate();
+
+    console.log(this.state.rating);
   }
 
-  onGenreChoice(genre) {
+  deleteEntry(lineToDelete) {
+    //currently isn't setting the state
+    let currentList = this.state.data;
+
+    let toDelete = lineToDelete[0];
+
+    let filteredTasks = currentList.filter((film) => film.filmTitle !== toDelete);
+    //I've done console.log and I can see that the filteredTask is showing what it should
+    //it's just it won't set the state and I'm not sure why at the moment!
     this.setState({
-      genre: genre
-      
+      data: filteredTasks
     });
-}
+  }
 
   render() {
     return (
@@ -70,10 +107,15 @@ class App extends Component {
           onRatingHandler={this.ratingGiven}
         />
         <GenreDropDown 
-          onGenreChoiceHandler={this.onGenreChoice} />
+          onGenreChoiceHandler={this.onGenreChoice} 
+        />
         <AddButton 
-          onAddClickedHandler={this.addEntry}/>
-        <FilmListTable data={data}/>
+          onAddClickedHandler={this.addEntry}
+        />
+        <FilmListTable 
+          data={data}
+          onDeleteHandler={this.deleteEntry}
+        />
       </div>
     );
   }

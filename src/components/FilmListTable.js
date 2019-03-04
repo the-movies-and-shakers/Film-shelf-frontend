@@ -3,11 +3,37 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import '../App.css';
 
 class FilmListTable extends React.Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.onDeleteRow = this.onDeleteRow.bind(this);
+  }   
+   
+  onDeleteRow(rowKeys) {
+    
+    this.props.onDeleteHandler(rowKeys)
+  }
 
     render() {
+
+      const options = {
+        afterDeleteRow: this.onDeleteRow
+      }
+  
+      const selectRowProp = {
+        mode: 'checkbox'
+      }
+
         return (
           <div style={styles.table}>
-            <BootstrapTable data={this.props.data} trClassName='tr-style'>
+            <BootstrapTable 
+              data={this.props.data} 
+              deleteRow={true}
+              selectRow={selectRowProp}
+              options={options}
+              trClassName='tr-style'
+              >
               <TableHeaderColumn isKey dataField='filmTitle' className='tr-head'>
                 Title
               </TableHeaderColumn>
@@ -31,7 +57,7 @@ class FilmListTable extends React.Component {
           fontFamily: "Shrikhand",
           paddingLeft: "10%",
           paddingRight: "10%",
-      },
+      }
     }
 
 export default FilmListTable;

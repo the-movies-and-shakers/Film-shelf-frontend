@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body {
   background-color: #011627;
@@ -6,11 +7,15 @@ body {
 }
 
 .tr-style {
-  background-color: aliceblue
+  background-color: #011627;
+  color: goldenrod;
+  border-color: goldenrod;
 }
 
 .tr-head {
-  background-color: aliceblue
+  background-color: #01162700;
+  color: goldenrod;
+  border-color: goldenrod;
 }
 
 

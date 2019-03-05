@@ -31,10 +31,11 @@ class FilmListTable extends React.Component {
               data={this.props.data} 
               deleteRow={true}
               selectRow={selectRowProp}
-              options={{ noDataText: "No films yet!" }}
+              options={options}
               trClassName='tr-style'
               style={styles.table}>
-              <TableHeaderColumn isKey dataField='filmTitle' className='tr-head'>Title</TableHeaderColumn>
+              <TableHeaderColumn isKey dataField='filmId' className='tr-head' hidden>Film ID</TableHeaderColumn>
+              <TableHeaderColumn dataField='filmTitle' className='tr-head'>Title</TableHeaderColumn>
               <TableHeaderColumn dataField='rating' className='tr-head'>Rating</TableHeaderColumn>
               <TableHeaderColumn dataField='genre' className='tr-head'>Genre</TableHeaderColumn>
             </BootstrapTable>

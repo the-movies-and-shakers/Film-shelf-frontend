@@ -6,7 +6,7 @@ import RatingInput from './components/RatingInput';
 import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
 import FilmListTable from './components/FilmListTable';
-// import functionsService from './service/functions';
+import functionsService from './service/functions';
 
 let data = [];
 
@@ -24,26 +24,16 @@ class App extends Component {
     this.filmTitleEntered = this.filmTitleEntered.bind(this);
     this.ratingGiven = this.ratingGiven.bind(this);
     this.onGenreChoice = this.onGenreChoice.bind(this);
-    this.addEntry = this.addEntry.bind(this);
-    this.deleteEntry = this.deleteEntry.bind(this);
+    this.saveFilm = this.saveFilm.bind(this);
+    this.deleteFilm = this.deleteFilm.bind(this);
   }
 
-  // async componentDidMount() {
+  async componentDidMount() {
 
-<<<<<<< HEAD
     const newData = await functionsService.getFilms();
 
     Array.prototype.push.apply(data, newData);
-
-    console.log(newData);
   }
-=======
-  //   const newData = await functionsService.getFilms();
-  
-  //   Array.prototype.push.apply(data, newData);
-  // }
->>>>>>> e6b262d7b5dae91230a108dd6fd6f0efe08fd228
-
 
   filmTitleEntered(film) {
 
@@ -66,7 +56,9 @@ class App extends Component {
     });
   }
 
-  addEntry() {
+  async saveFilm() {
+
+    const response = await functionsService.saveFilm();
     
     let filmToBeAdded = {
       filmTitle: this.state.filmTitle,
@@ -81,28 +73,17 @@ class App extends Component {
       rating: 0,
       genre: ""
     });
-
-    this.setState({
-      data: data
-    });
-
-    this.forceUpdate();
-
-    console.log(this.state.rating);
   }
 
-  deleteEntry(lineToDelete) {
-    //currently isn't setting the state
-    let currentList = this.state.data;
+  async deleteFilm(identifier) {
 
-    let toDelete = lineToDelete[0];
+    const response = await functionsService.deleteFilm(identifier);
 
-    let filteredFilms = currentList.filter((film) => film.filmTitle !== toDelete);
-    //I've done console.log and I can see that the filteredTask is showing what it should
-    //it's just it won't set the state and I'm not sure why at the moment!
-    this.setState({
-      data: filteredFilms
-    });
+    let filteredFilms = data.filter((film) => film.filmId !== identifier);
+
+    let length = data.length;
+    
+    Array.prototype.data.splice(0, length, filteredFilms);
   }
 
   render() {
@@ -119,11 +100,11 @@ class App extends Component {
           onGenreChoiceHandler={this.onGenreChoice} 
         />
         <AddButton 
-          onAddClickedHandler={this.addEntry}
+          onAddClickedHandler={this.saveFilm}
         />
         <FilmListTable 
           data={data}
-          onDeleteHandler={this.deleteEntry}
+          onDeleteHandler={this.deleteFilm}
         />
       </div>
     );

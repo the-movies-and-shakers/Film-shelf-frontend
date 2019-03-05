@@ -68,7 +68,7 @@ const styles = {
         textAlign: "Center",
         fontSize: "30px",
         paddingTop: "30px",
-        fontFamily: "Shrikhand"
+        fontFamily: "Montserrat"
     },
     stars: {
         color: "goldenrod",

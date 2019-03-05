@@ -13,6 +13,7 @@ class FilmTitleInputBox extends React.Component {
         this.props.onFilmHandler(event.target.value);
 
     }
+    
 
     render() {
         return (
@@ -42,15 +43,15 @@ const styles = {
     filmEntry: {
         textAlign: "center",
         marginTop: "40px",
-        paddingLeft: "250px",
-        paddingRight: "250px"
+        paddingLeft: "20%",
+        paddingRight: "20%"
     },
 
     holder: {
         color: "goldenrod",
-        backgroundColor: "#011627",
+        backgroundColor: "#01162700",
         borderColor: "goldenrod",
-        fontFamily: "Shrikhand"
+        fontFamily: "Montserrat"
     }
 
 }

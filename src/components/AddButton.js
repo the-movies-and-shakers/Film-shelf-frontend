@@ -40,7 +40,8 @@ const styles = {
         backgroundColor: "goldenrod",
         color: "#011627",
         fontFamily: "Montserrat",
-        fontSize: "25px"
+        fontSize: "25px",
+        borderColor: "goldenrod"
     }
 };
 

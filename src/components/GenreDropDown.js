@@ -36,17 +36,17 @@ class GenreDropDown extends React.Component {
 const styles = {
     menu: {
         color: "goldenrod",
-        backgroundColor: "#011627",
+        backgroundColor: "#01162700",
         borderColor: "goldenrod",
-        fontFamily: "Shrikhand",
+        fontFamily: "Montserrat",
         paddingLeft: "40%"
     },
 
     genre: {
         color: "goldenrod",
-        backgroundColor: "#011627",
+        backgroundColor: "#01162700",
         borderColor: "goldenrod",
-        fontFamily: "Shrikhand",
+        fontFamily: "Montserrat",
         width: "260px",
         fontSize: "23px"
     }

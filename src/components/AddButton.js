@@ -39,7 +39,8 @@ const styles = {
         borderRadius: "50%",
         backgroundColor: "goldenrod",
         color: "#011627",
-        fontFamily: "Shrikhand"
+        fontFamily: "Montserrat",
+        fontSize: "25px"
     }
 };
 

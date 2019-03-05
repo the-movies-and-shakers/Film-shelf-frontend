@@ -6,7 +6,7 @@ import RatingInput from './components/RatingInput';
 import GenreDropDown from './components/GenreDropDown';
 import AddButton from './components/AddButton';
 import FilmListTable from './components/FilmListTable';
-import functionsService from './service/functions';
+// import functionsService from './service/functions';
 
 let data = [];
 
@@ -28,12 +28,12 @@ class App extends Component {
     this.deleteEntry = this.deleteEntry.bind(this);
   }
 
-  async componentDidMount() {
+  // async componentDidMount() {
 
-    const newData = await functionsService.getFilms();
+  //   const newData = await functionsService.getFilms();
   
-    Array.prototype.push.apply(data, newData);
-  }
+  //   Array.prototype.push.apply(data, newData);
+  // }
 
   filmTitleEntered(film) {
 

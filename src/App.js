@@ -30,10 +30,13 @@ class App extends Component {
 
   // async componentDidMount() {
 
-  //   const newData = await functionsService.getFilms();
-  
-  //   Array.prototype.push.apply(data, newData);
-  // }
+    const newData = await functionsService.getFilms();
+
+    Array.prototype.push.apply(data, newData);
+
+    console.log(newData);
+  }
+
 
   filmTitleEntered(film) {
 

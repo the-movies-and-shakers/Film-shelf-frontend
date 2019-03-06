@@ -55,7 +55,7 @@ class App extends Component {
 
   async saveFilm(filmId, filmTitle, genre, rating) {
     let filmToBeAdded = {
-      filmId: this.state.filmId,
+      filmId: this.state.filmId, /*added in here*/
       filmTitle: this.state.filmTitle,
       rating: this.state.rating,
       genre: this.state.genre
@@ -63,7 +63,7 @@ class App extends Component {
     
     const response = await functionsService.saveFilm(filmToBeAdded);
 
-    data.push = response.filmToBeAdded;
+    data.push(response.filmToBeAdded); /*added response in here (maybe not right!)*/
 
     console.log(data);
 

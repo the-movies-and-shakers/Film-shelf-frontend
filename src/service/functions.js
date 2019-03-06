@@ -6,7 +6,7 @@ const functionsService = {
         let dataReceived = await res.data;
         return dataReceived;
     },
-    async saveFilm(filmTitle, genre, rating) {
+    async saveFilm(filmId, filmTitle, genre, rating) {
         let res = await axios.post("https://zzradubzm5.execute-api.eu-west-2.amazonaws.com/dev/films");
         let dataReceived = await res.data;
         return dataReceived;

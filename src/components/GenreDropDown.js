@@ -26,6 +26,10 @@ class GenreDropDown extends React.Component {
                     <option value="Horror">Horror</option>
                     <option value="Comedy">Comedy</option>
                     <option value="Thriller">Thriller</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Sci-fi">Sci-fi</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Action">Action</option>
                 </select>
             </div>
 

@@ -30,21 +30,17 @@ class App extends Component {
   }
 
   async componentDidMount() {
-
     const newData = await functionsService.getFilms();
-
     Array.prototype.push.apply(data, newData);
   }
 
   filmTitleEntered(film) {
-
     this.setState({
       filmTitle: film
     });
   }
 
   ratingGiven(newRating) {
-
     this.setState({
       rating: newRating
     });
@@ -57,36 +53,33 @@ class App extends Component {
     });
   }
 
-  async saveFilm(filmTitle, genre, rating) {
-    
+  async saveFilm(filmId, filmTitle, genre, rating) {
     let filmToBeAdded = {
+      filmId: this.state.filmId,
       filmTitle: this.state.filmTitle,
       rating: this.state.rating,
-      genre: this.state.genre,
-      filmId: this.state.filmId
+      genre: this.state.genre
     }  
     
     const response = await functionsService.saveFilm(filmToBeAdded);
 
-    data.push(filmToBeAdded);
+    data.push = response.filmToBeAdded;
 
     console.log(data);
 
     this.setState({
       filmTitle: "",
       rating: 0,
-      genre: ""
+      genre: "",
+      filmId: 0
     });
   }
 
   async deleteFilm(identifier) {
 
     const response = await functionsService.deleteFilm(identifier);
-
     let filteredFilms = data.filter((film) => film.filmId !== identifier);
-
     let length = data.length;
-    
     Array.prototype.data.splice(0, length, filteredFilms);
   }
 

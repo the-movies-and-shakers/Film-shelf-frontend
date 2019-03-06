@@ -6,9 +6,10 @@ const functionsService = {
         let dataReceived = await res.data;
         return dataReceived;
     },
-    async saveFilm() {
+    async saveFilm(filmTitle, genre, rating) {
         let res = await axios.post("https://zzradubzm5.execute-api.eu-west-2.amazonaws.com/dev/films");
-        return res.data;
+        let dataReceived = await res.data;
+        return dataReceived;
     },
     async deleteFilm(filmId) {
         let res = await axios.delete("https://zzradubzm5.execute-api.eu-west-2.amazonaws.com/dev/films/" + filmId);

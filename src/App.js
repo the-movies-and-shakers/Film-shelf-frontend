@@ -18,7 +18,8 @@ class App extends Component {
     this.state = {
       filmTitle: "",
       rating: 0,
-      genre: ""
+      genre: "",
+      filmId: 0
     }
 
     this.filmTitleEntered = this.filmTitleEntered.bind(this);
@@ -56,17 +57,20 @@ class App extends Component {
     });
   }
 
-  async saveFilm() {
-
-    const response = await functionsService.saveFilm();
+  async saveFilm(filmTitle, genre, rating) {
     
     let filmToBeAdded = {
       filmTitle: this.state.filmTitle,
       rating: this.state.rating,
-      genre: this.state.genre
-    }    
+      genre: this.state.genre,
+      filmId: this.state.filmId
+    }  
+    
+    const response = await functionsService.saveFilm(filmToBeAdded);
 
     data.push(filmToBeAdded);
+
+    console.log(data);
 
     this.setState({
       filmTitle: "",

@@ -53,9 +53,8 @@ class App extends Component {
     });
   }
 
-  async saveFilm(filmId, filmTitle, genre, rating) {
+  async saveFilm(filmTitle, genre, rating) {
     let filmToBeAdded = {
-      filmId: this.state.filmId, /*added in here*/
       filmTitle: this.state.filmTitle,
       rating: this.state.rating,
       genre: this.state.genre

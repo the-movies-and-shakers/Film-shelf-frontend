@@ -43,7 +43,7 @@ const styles = {
         backgroundColor: "#01162700",
         borderColor: "goldenrod",
         fontFamily: "Montserrat",
-        paddingLeft: "40%"
+        paddingLeft: "42%"
     },
 
     genre: {

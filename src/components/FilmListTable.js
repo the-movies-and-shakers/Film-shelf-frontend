@@ -33,11 +33,12 @@ class FilmListTable extends React.Component {
               selectRow={selectRowProp}
               options={options}
               trClassName='tr-style'
-              style={styles.table}>
+              style={styles.table}
+              borderColor={'goldenrod'}>
               <TableHeaderColumn isKey dataField='filmId' className='tr-head' hidden>Film ID</TableHeaderColumn>
-              <TableHeaderColumn dataField='filmTitle' className='tr-head'>Title</TableHeaderColumn>
-              <TableHeaderColumn dataField='rating' className='tr-head'>Rating</TableHeaderColumn>
-              <TableHeaderColumn dataField='genre' className='tr-head'>Genre</TableHeaderColumn>
+              <TableHeaderColumn width={'60%'} dataField='filmTitle' className='tr-head'>Title</TableHeaderColumn>
+              <TableHeaderColumn width={'20%'} dataField='rating' className='tr-head'>Rating</TableHeaderColumn>
+              <TableHeaderColumn width={'20%'} dataField='genre' className='tr-head'>Genre</TableHeaderColumn>
             </BootstrapTable>
           </div>
         );
@@ -51,8 +52,8 @@ const styles = {
     borderColor: "goldenrod",
     fontFamily: "Montserrat",
     paddingLeft: "20%",
-    paddingRight: "20%",
-  }
+    paddingRight: "20%"
+    }
 }
 
 export default FilmListTable;
